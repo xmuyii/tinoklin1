@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tino Klin | Premium Nigerian Professional Cleaning Services & Store</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            primary: '#0f766e', // Deep Emerald Teal
+                            accent: '#22c55e'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #ffffff !important;
+            color: #0f172a;
+        }
+        .logo-img {
+            height: 40px;
+            width: auto;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body class="antialiased text-slate-900 bg-white">
+
+    <!-- CONFIGURATION -->
+    <script>
+        const WHATSAPP_NUMBER = "2348180085401"; // Tino Klin's WhatsApp number
+        const ADMIN_SECRET_CODE = "tinoklin2026"; // Secret password for the backend panel
+    </script>
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-emerald-700 text-white text-xs sm:text-sm py-2.5 px-4 border-b border-emerald-800">
+        <div class="container mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
+            <div class="flex items-center justify-center space-x-2">
+                <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-300 animate-pulse"></span>
+                <span class="font-bold">✨ Special Offer: Get 15% OFF Weekend Deep Cleans & Free Delivery on Cleaning Products!</span>
+            </div>
+            <div class="flex items-center space-x-4 text-xs font-semibold">
+                <span><i class="fa-solid fa-phone text-emerald-300 mr-1"></i> +234 818 008 5401</span>
+                <span class="hidden md:inline"><i class="fa-solid fa-clock text-emerald-300 mr-1"></i> Mon - Sat: 7:00 AM - 7:00 PM</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <nav class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-xs">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo & v1.0 2026 Text on the left side below logo -->
+                <div class="flex items-center space-x-3">
+                    <a href="#" class="flex items-center space-x-3">
+                        <img src="images/logo.jpg" alt="Tino Klin" class="logo-img">
+                        <div>
+                            <span class="text-2xl font-black tracking-tight text-slate-900">Tino <span class="text-emerald-600">Klin</span></span>
+                            <span class="block text-[10px] font-extrabold text-teal-800 tracking-widest uppercase">Nigerian Cleaning Company</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Desktop Nav Links -->
+                <div class="hidden lg:flex items-center space-x-6 text-sm font-bold text-slate-700">
+                    <a href="#services" class="hover:text-emerald-600 transition-colors">Services</a>
+                    <a href="#offers" class="text-emerald-600 hover:text-emerald-700 transition-colors flex items-center space-x-1">
+                        <i class="fa-solid fa-tag text-xs"></i><span>Special Offers</span>
+                    </a>
+                    <a href="#products-store" class="hover:text-emerald-600 transition-colors">Cleaning Store</a>
+                    <a href="#booking" class="hover:text-emerald-600 transition-colors">Instant Quote</a>
+                    <a href="#careers" class="hover:text-emerald-600 transition-colors">We're Hiring</a>
+                    <a href="#testimonials" class="hover:text-emerald-600 transition-colors">Reviews</a>
+                </div>
+
+                <!-- CTA Button & Cart Icon -->
+                <div class="hidden md:flex items-center space-x-3">
+                    <button onclick="toggleCart()" class="relative bg-slate-100 hover:bg-slate-200 text-slate-800 p-2.5 rounded-full transition-colors">
+                        <i class="fa-solid fa-cart-shopping text-emerald-600 text-base"></i>
+                        <span id="cartCount" class="absolute -top-1 -right-1 bg-emerald-600 text-white font-black text-[10px] w-5 h-5 rounded-full flex items-center justify-center">0</span>
+                    </button>
+                    <a id="navWhatsappBtn" href="https://wa.me/2348180085401" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold px-5 py-2.5 rounded-xl text-sm transition-all flex items-center space-x-2 shadow-md shadow-emerald-600/20">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Book On WhatsApp</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center space-x-2">
+                    <button onclick="toggleCart()" class="relative bg-slate-100 text-slate-800 p-2 rounded-full">
+                        <i class="fa-solid fa-cart-shopping text-emerald-600 text-sm"></i>
+                        <span id="cartCountMobile" class="absolute -top-1 -right-1 bg-emerald-600 text-white font-black text-[10px] w-4 h-4 rounded-full flex items-center justify-center">0</span>
+                    </button>
+                    <button id="mobileMenuBtn" class="text-slate-700 hover:text-emerald-600 focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-6 space-y-3">
+            <a href="#services" class="block text-slate-700 hover:text-emerald-600 font-bold py-2">Services Offered</a>
+            <a href="#offers" class="block text-emerald-600 font-bold py-2">🔥 Special Offers</a>
+            <a href="#products-store" class="block text-slate-700 hover:text-emerald-600 font-bold py-2">🛒 Cleaning Products Store</a>
+            <a href="#booking" class="block text-slate-700 hover:text-emerald-600 font-bold py-2">Instant Booking</a>
+            <a href="#careers" class="block text-slate-700 hover:text-emerald-600 font-bold py-2">💼 Careers / Hiring</a>
+            <a href="#testimonials" class="block text-slate-700 hover:text-emerald-600 font-bold py-2">Testimonials</a>
+            <a id="mobileNavWhatsappBtn" href="https://wa.me/2348180085401" target="_blank" class="w-full bg-emerald-600 text-white font-bold py-3.5 rounded-xl text-center flex items-center justify-center space-x-2 shadow-md">
+                <i class="fa-brands fa-whatsapp text-xl"></i>
+                <span>Chat With Tino Klin</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative py-12 lg:py-20 bg-white overflow-hidden">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Content -->
+                <div class="lg:col-span-7 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 bg-emerald-50 border border-emerald-200 px-4 py-2 rounded-full text-xs sm:text-sm text-teal-900 font-bold mb-6">
+                        <i class="fa-solid fa-broom text-emerald-600"></i>
+                        <span>Nigeria's Premier Cleaning Company & Product Supplier</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-tight mb-6">
+                        Spotless Nigerian Homes, Offices & Pro <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-800 to-emerald-600">Cleaning Products.</span>
+                    </h1>
+                    <p class="text-base sm:text-lg text-slate-600 mb-8 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        From deep home cleaning and post-construction scrubbing to ordering professional-grade disinfecting liquids and detergents straight to your doorstep. Delivered by trained Nigerian professionals in branded Tino Klin uniforms.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#booking" class="w-full sm:w-auto bg-teal-800 hover:bg-teal-900 text-white font-bold px-8 py-4 rounded-xl shadow-lg shadow-teal-800/20 transition-all flex items-center justify-center space-x-3 text-base">
+                            <i class="fa-solid fa-calculator"></i>
+                            <span>Calculate Cleaning Cost</span>
+                        </a>
+                        <a href="#products-store" class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-8 py-4 rounded-xl shadow-lg shadow-emerald-600/20 transition-all flex items-center justify-center space-x-3 text-base">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                            <span>Buy Cleaning Products</span>
+                        </a>
+                    </div>
+                    <div class="relative rounded-3xl overflow-hidden border border-slate-200 shadow-xl bg-slate-100 group">
+                        <img src="images/official-crew.jpg" alt="Tino Klin Cleaning Crew" class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-4">
+                            <span class="text-xs font-bold text-white bg-emerald-600 px-3 py-1.5 rounded-full flex items-center space-x-1.5 shadow-md">
+                                <i class="fa-solid fa-shield-check"></i>
+                                <span>Official Tino Klin Uniformed Crew</span>
+                            </span>
+                        </div>
+                        <style>
+                            .www {
+                                height: 500px;
+                                width: 400px;
+                                object-fit: contain;
+                            }
+                        </style>
+                    </div>
+
+                    <!-- Trust Metrics -->
+                    <div class="grid grid-cols-3 gap-4 pt-10 mt-10 border-t border-slate-200">
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-black text-slate-900">1,800+</p>
+                            <p class="text-xs sm:text-sm text-slate-600 font-semibold">Homes Cleaned</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-black text-emerald-600">100%</p>
+                            <p class="text-xs sm:text-sm text-slate-600 font-semibold">Uniformed Staff</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-black text-slate-900">4.9 ★</p>
+                            <p class="text-xs sm:text-sm text-slate-600 font-semibold">Customer Rating</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Instant Quote Form WITH Product Recommendations -->
+                <div id="booking" class="lg:col-span-5 space-y-6">
+                    <div class="bg-white border border-slate-200 p-6 sm:p-8 rounded-3xl shadow-xl shadow-slate-100 relative">
+                        <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-100">
+                            <div>
+                                <h3 class="text-xl font-extrabold text-slate-900">Get Instant Quote & Add Products</h3>
+                                <p class="text-xs text-slate-500 mt-1">Select your service details and optionally add cleaning supplies</p>
+                            </div>
+                            <span class="w-10 h-10 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-lg font-bold">
+                                <i class="fa-solid fa-bolt"></i>
+                            </span>
+                        </div>
+
+                        <form id="quoteForm" class="space-y-4">
+                            <!-- Service Type -->
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Service Required</label>
+                                <select id="serviceType" class="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-xl px-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-emerald-500 font-semibold">
+                                    <option value="Residential Deep Cleaning">Residential Deep Cleaning</option>
+                                    <option value="Post-Construction Cleaning">Post-Construction / Move-In Cleaning</option>
+                                    <option value="Industrial, Office & Corporate Janitorial">Industrial, Office & Corporate Janitorial</option>
+                                    <option value="Sofa, Mattress, Rugs & Carpet Wash">Sofa, Mattress, Rugs & Carpet Washing</option>
+                                    <option value="Fumigation & Pest Control">Fumigation & Pest Control</option>
+                                    <option value="Refuse Collection">Refuse Collection</option>
+                                    <option value="High Rise Building Cleaning">High Rise Building Cleaning</option>
+                                </select>
+                            </div>
+
+                            <!-- Property Size / Detail -->
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Property / Item Details</label>
+                                <select id="propertySize" class="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-xl px-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-emerald-500 font-semibold">
+                                    <option value="1 or 2 Bedroom Apartment">1 - 2 Bedroom Apartment / Self Contain</option>
+                                    <option value="3 or 4 Bedroom Flat/Duplex">3 - 4 Bedroom Flat / Duplex</option>
+                                    <option value="5+ Bedroom Mansion">5+ Bedroom Mansion / Complex</option>
+                                    <option value="Small Office Space">Small Office Space (&lt; 100 sqm)</option>
+                                    <option value="Large Commercial Building">Large Commercial Building / Event Centre</option>
+                                    <option value="Sofa & Rugs Only">Sofa, Mattress & Rug Sets Only</option>
+                                </select>
+                            </div>
+
+                            <!-- Location Select -->
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">City / Location</label>
+                                <select id="serviceCity" class="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-xl px-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-emerald-500 font-semibold">
+                                    <option value="Lagos (Island / Mainland)">Lagos (Island & Mainland)</option>
+                                    <option value="Abuja (FCT)">Abuja (FCT)</option>
+                                    <option value="Ibadan">Ibadan</option>
+                                    <option value="Port Harcourt">Port Harcourt</option>
+                                    <option value="Other Location">Other Nigerian Location</option>
+                                </select>
+                            </div>
+
+                            <!-- Preferred Date -->
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Preferred Date</label>
+                                <input type="date" id="preferredDate" class="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500 font-semibold">
+                            </div>
+
+                            <!-- Add Recommended Cleaning Products Checkboxes -->
+                            <div class="pt-3 border-t border-slate-100">
+                                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">🛒 Add Cleaning Products To This Request:</label>
+                                <div id="quoteAddonsContainer" class="space-y-2 bg-slate-50 p-3.5 rounded-xl border border-slate-200">
+                                    <!-- Populated dynamically -->
+                                </div>
+                            </div>
+
+                            <!-- WhatsApp Action Button -->
+                            <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-black py-4 rounded-xl shadow-lg shadow-emerald-600/30 transition-all text-base flex items-center justify-center space-x-2 mt-2">
+                                <i class="fa-brands fa-whatsapp text-2xl"></i>
+                                <span>Request Quote & Products On WhatsApp</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Offers & Discount Packages (Dynamic Rendered) -->
+    <section id="offers" class="py-20 bg-slate-50 border-t border-slate-200">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-bold text-amber-600 bg-amber-100 px-3 py-1 rounded-full uppercase tracking-wider border border-amber-300">Limited Time Deals</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-3">Special Tino Klin Offers & Bundles</h2>
+                <p class="text-slate-600 text-sm mt-2">Take advantage of our specially curated packages designed to give you maximum cleanliness at unbeatable promotional rates across Nigeria.</p>
+            </div>
+
+            <div id="offersGrid" class="grid md:grid-cols-3 gap-8">
+                <!-- Populated dynamically via JS (Max 3 Offers) -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Cleaning Products E-Commerce Store -->
+    <section id="products-store" class="py-20 bg-white border-t border-slate-200">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full uppercase tracking-wider border border-emerald-200">Tino Klin Store</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">Professional Cleaning Products</h2>
+                    <p class="text-slate-600 text-sm mt-2">Purchase high-grade detergents, disinfectants, and cleaning tools used by our professional cleaners.</p>
+                </div>
+                <button onclick="toggleCart()" class="mt-4 md:mt-0 bg-emerald-50 border border-emerald-200 text-emerald-700 hover:bg-emerald-100 font-bold px-5 py-2.5 rounded-xl text-xs transition-all flex items-center space-x-2">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span>View Cart (<span id="cartBadgeCount">0</span>)</span>
+                </button>
+            </div>
+
+            <!-- Products Grid -->
+            <div id="productGrid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Populated dynamically via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Offered Section -->
+    <section id="services" class="py-20 bg-white border-t border-slate-200">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full uppercase tracking-wider border border-emerald-200">What We Do</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">Comprehensive Tino Klin Services</h2>
+                <p class="text-slate-600 text-sm mt-2">Tailored cleaning solutions for homes, corporate offices, and industrial properties across Nigeria.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white border border-slate-200 p-8 rounded-3xl hover:border-emerald-500 transition-all hover:shadow-lg group">
+                    <div class="w-14 h-14 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-house-chimney"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Residential Deep Cleaning</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        Thorough scrubbing and sanitization of kitchens, bathrooms, bedrooms, windows, tiles, and high-touch surface areas.
+                    </p>
+                    <button onclick="bookServiceDirect('Residential Deep Cleaning')" class="text-xs font-extrabold text-emerald-600 hover:text-emerald-700 flex items-center space-x-1">
+                        <span>Book This Service</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white border border-slate-200 p-8 rounded-3xl hover:border-emerald-500 transition-all hover:shadow-lg group">
+                    <div class="w-14 h-14 bg-teal-50 text-teal-800 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-teal-800 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-building"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Post-Construction Cleaning</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        Removal of paint splatters, cement dust, construction debris, and deep floor polishing for brand-new or renovated properties.
+                    </p>
+                    <button onclick="bookServiceDirect('Post-Construction Cleaning')" class="text-xs font-extrabold text-emerald-600 hover:text-emerald-700 flex items-center space-x-1">
+                        <span>Book This Service</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white border border-slate-200 p-8 rounded-3xl hover:border-emerald-500 transition-all hover:shadow-lg group">
+                    <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Office &amp; Corporate Janitorial</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        Scheduled daily, weekly, or monthly contract cleaning routines to keep your corporate environment hygienic and productive.
+                    </p>
+                    <button onclick="bookServiceDirect('Corporate Janitorial Cleaning')" class="text-xs font-extrabold text-emerald-600 hover:text-emerald-700 flex items-center space-x-1">
+                        <span>Book This Service</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-white border border-slate-200 p-8 rounded-3xl hover:border-emerald-500 transition-all hover:shadow-lg group">
+                    <div class="w-14 h-14 bg-amber-50 text-amber-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-couch"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Sofa &amp; Mattress Vacuuming</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        Deep steam extraction washing for fabric and leather sofas, carpets, area rugs, and mattress allergen removal.
+                    </p>
+                    <button onclick="bookServiceDirect('Sofa &amp; Mattress Washing')" class="text-xs font-extrabold text-emerald-600 hover:text-emerald-700 flex items-center space-x-1">
+                        <span>Book This Service</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-white border border-slate-200 p-8 rounded-3xl hover:border-emerald-500 transition-all hover:shadow-lg group">
+                    <div class="w-14 h-14 bg-rose-50 text-rose-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-rose-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-bug"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Fumigation &amp; Pest Control</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        Safe, odourless pest extermination targeting mosquitoes, rodents, bedbugs, cockroaches, and termites.
+                    </p>
+                    <button onclick="bookServiceDirect('Fumigation &amp; Pest Control')" class="text-xs font-extrabold text-emerald-600 hover:text-emerald-700 flex items-center space-x-1">
+                        <span>Book This Service</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="bg-white border border-slate-200 p-8 rounded-3xl hover:border-emerald-500 transition-all hover:shadow-lg group">
+                    <div class="w-14 h-14 bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-truck-ramp-box"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Move-In / Move-Out Cleaning</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        Detailed reset cleaning for tenants or property owners transitioning between apartments or commercial locations.
+                    </p>
+                    <button onclick="bookServiceDirect('Move-In/Move-Out Cleaning')" class="text-xs font-extrabold text-emerald-600 hover:text-emerald-700 flex items-center space-x-1">
+                        <span>Book This Service</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Our cleaners at work -->
+    <section id="gallery" class="py-20 bg-white border-t border-slate-100">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full uppercase tracking-wider border border-emerald-200">Our Cleaners at Work</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-3">Nigerian Tino Klin Crew In Action</h2>
+                <p class="text-slate-600 text-sm mt-2">Every member of our team is fully vetted, trained, and wears our signature Tino Klin uniform with our brand name proudly on their back.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Gallery Card 1: Office Window Cleaner -->
+                <div class="bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all group">
+                    <div class="relative h-64 overflow-hidden bg-slate-100">
+                        <img src="images/office.jpg" alt="Nigerian Male Cleaner Floor Mopping - Tino Klin" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-3 left-3 bg-slate-900 text-white text-[11px] font-bold px-3 py-1 rounded-full">
+                            Corporate Office
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-lg font-bold text-slate-900 mb-1">Commercial Office Cleaning</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Uniformed Tino Klin staff moping the floors of out window polishing and workstation sanitization in Victoria Island, Lagos.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Gallery Card 2: Bedroom Carpet Vacuuming -->
+                <div class="bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all group">
+                    <div class="relative h-64 overflow-hidden bg-slate-100">
+                        <img src="images/fumigation.jpg" alt="Fumigation & Pest Control - Tino Klin" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-3 left-3 bg-emerald-600 text-white text-[11px] font-bold px-3 py-1 rounded-full">
+                            Fumigation & Pest Control
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-lg font-bold text-slate-900 mb-1">Fumigation &amp; Pest Control</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Tino Klin crew member performing fumigation using our knapsack sprayer with HEPA filter equipment in Maitama, Abuja.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Gallery Card 3: Post-Construction Kitchen Scrubbing -->
+                <div class="bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all group">
+                    <div class="relative h-64 overflow-hidden bg-slate-100">
+                        <img src="images/post-construction.jpg" alt="Nigerian Cleaner Scrubbing Kitchen Tiles - Tino Klin" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-3 left-3 bg-teal-800 text-white text-[11px] font-bold px-3 py-1 rounded-full">
+                            Post-Construction
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-lg font-bold text-slate-900 mb-1">Post-Construction Tile Scrubbing</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Tino Klin team conducting post-construction cement strain removal and tile buffing in Bodija, Ibadan.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Careers / Hiring Cleaners & Staff -->
+    <section id="careers" class="py-20 bg-slate-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#22c55e_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7">
+                    <span class="text-xs font-bold text-emerald-400 bg-emerald-950 px-3 py-1 rounded-full uppercase tracking-wider border border-emerald-800">We're Hiring</span>
+                    <h2 class="text-3xl sm:text-4xl font-black text-white mt-3 mb-4">Join The Tino Klin Professional Cleaning Team</h2>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                        Are you hardworking, honest, and passionate about professional cleaning? Tino Klin is actively hiring trained cleaners, supervisors, and dispatch agents across Lagos, Abuja, and Ibadan. Enjoy competitive salaries, uniform provision, and flexible career growth.
+                    </p>
+                    <div class="grid sm:grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-center space-x-3 bg-slate-800/80 p-3.5 rounded-2xl border border-slate-700">
+                            <i class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>
+                            <span class="text-xs font-bold text-slate-200">Competitive Monthly Salary</span>
+                        </div>
+                        <div class="flex items-center space-x-3 bg-slate-800/80 p-3.5 rounded-2xl border border-slate-700">
+                            <i class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>
+                            <span class="text-xs font-bold text-slate-200">Uniforms & Training Provided</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job Application Card -->
+                <div class="lg:col-span-5 bg-slate-800 border border-slate-700 p-6 sm:p-8 rounded-3xl shadow-2xl">
+                    <h3 class="text-xl font-extrabold text-white mb-2">Apply For a Job Online</h3>
+                    <p class="text-xs text-slate-400 mb-6">Fill out your details below and our HR team will reach out via WhatsApp.</p>
+                    
+                    <form id="jobForm" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1">Full Name</label>
+                            <input type="text" id="jobName" required placeholder="e.g. Oluwaseun Grace" class="w-full bg-slate-900 border border-slate-700 text-white text-sm rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1">Phone Number (WhatsApp)</label>
+                            <input type="tel" id="jobPhone" required placeholder="e.g. 08030000000" class="w-full bg-slate-900 border border-slate-700 text-white text-sm rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1">Role Applying For</label>
+                            <select id="jobRole" class="w-full bg-slate-900 border border-slate-700 text-white text-sm rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500 font-semibold">
+                                <option value="Professional Field Cleaner">Professional Field Cleaner</option>
+                                <option value="Cleaning Supervisor">Cleaning Supervisor</option>
+                                <option value="Fumigation Technician">Fumigation Technician</option>
+                                <option value="Customer Support / Sales Agent">Customer Support & Sales Agent</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1">Current City</label>
+                            <select id="jobCity" class="w-full bg-slate-900 border border-slate-700 text-white text-sm rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500 font-semibold">
+                                <option value="Lagos">Lagos</option>
+                                <option value="Abuja">Abuja</option>
+                                <option value="Ibadan">Ibadan</option>
+                                <option value="Port Harcourt">Port Harcourt</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-black py-4 rounded-xl shadow-lg transition-all text-sm flex items-center justify-center space-x-2 mt-2">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            <span>Submit Job Application via WhatsApp</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials & Reviews -->
+    <section id="testimonials" class="py-20 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-xl mx-auto mb-16">
+                <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full uppercase tracking-wider border border-emerald-200">Customer Reviews</span>
+                <h2 class="text-3xl font-extrabold text-slate-900 mt-3">What Our Clients Say</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-slate-50 border border-slate-200 p-6 rounded-3xl shadow-sm">
+                    <div class="flex items-center space-x-1 text-amber-400 text-xs mb-3">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-700 text-sm leading-relaxed italic mb-4">
+                        "Tino Klin handled the post-construction cleaning for my duplex in Lekki. Their uniformed crew arrived on time and removed all paint stains effortlessly."
+                    </p>
+                    <h5 class="text-xs font-bold text-slate-900">Dr. Femi Oladipo</h5>
+                    <p class="text-[11px] text-slate-500">Lekki, Lagos State</p>
+                </div>
+
+                <div class="bg-slate-50 border border-slate-200 p-6 rounded-3xl shadow-sm">
+                    <div class="flex items-center space-x-1 text-amber-400 text-xs mb-3">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-700 text-sm leading-relaxed italic mb-4">
+                        "I also buy their Tino Klin Disinfectant and Multi-purpose soap online. They deliver right to my doorstep in Abuja very fast!"
+                    </p>
+                    <h5 class="text-xs font-bold text-slate-900">Mrs. Chidinma Adebayo</h5>
+                    <p class="text-[11px] text-slate-500">Maitama, Abuja</p>
+                </div>
+
+                <div class="bg-slate-50 border border-slate-200 p-6 rounded-3xl shadow-sm">
+                    <div class="flex items-center space-x-1 text-amber-400 text-xs mb-3">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-700 text-sm leading-relaxed italic mb-4">
+                        "Very professional company. Ordered cleaning liquids and booked a sofa washing session together. Top notch service!"
+                    </p>
+                    <h5 class="text-xs font-bold text-slate-900">Tunde Alabi</h5>
+                    <p class="text-[11px] text-slate-500">Bodija, Ibadan</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Modal Drawer -->
+    <div id="cartModal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-sm flex justify-end">
+        <div class="w-full max-w-md bg-white h-full p-6 flex flex-col justify-between border-l border-slate-200 shadow-2xl">
+            <div>
+                <div class="flex items-center justify-between pb-4 border-b border-slate-100 mb-6">
+                    <h3 class="text-xl font-bold text-slate-900">Your Cleaning Products Cart</h3>
+                    <button onclick="toggleCart()" class="text-slate-400 hover:text-slate-700 text-xl">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+
+                <div id="cartItemsContainer" class="space-y-4 max-h-[50vh] overflow-y-auto pr-2">
+                    <!-- Cart items injected here -->
+                </div>
+            </div>
+
+            <div class="border-t border-slate-100 pt-4 space-y-4">
+                <div class="flex items-center justify-between text-base font-bold">
+                    <span class="text-slate-700">Products Subtotal:</span>
+                    <span id="cartTotal" class="text-emerald-600 text-xl font-black">₦0</span>
+                </div>
+                <button onclick="checkoutCartWhatsApp()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-black py-4 rounded-xl shadow-lg flex items-center justify-center space-x-2">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    <span>Checkout Products via WhatsApp</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- INVISIBLE ADMIN BACKEND MODAL (Prices & Max 3 Offers Management) -->
+    <div id="adminModal" class="fixed inset-0 z-50 hidden bg-slate-950/90 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="w-full max-w-2xl bg-slate-900 border border-emerald-500/40 rounded-3xl p-6 sm:p-8 text-white shadow-2xl max-h-[90vh] overflow-y-auto">
+            <div class="flex items-center justify-between pb-4 border-b border-slate-800 mb-6 sticky top-0 bg-slate-900 z-10">
+                <div>
+                    <h3 class="text-xl font-black text-emerald-400"><i class="fa-solid fa-shield-halved mr-2"></i>Admin Backend Panel</h3>
+                    <p class="text-xs text-slate-400">Manage product prices and customize up to 3 Special Offers (including badge background colors).</p>
+                </div>
+                <button onclick="closeAdminModal()" class="text-slate-400 hover:text-white text-xl">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Section 1: Product Prices -->
+                <div>
+                    <h4 class="text-sm font-bold text-emerald-400 uppercase tracking-wider mb-3">1. Manage Store & Add-on Prices</h4>
+                    <div id="adminPriceEditor" class="space-y-3"></div>
+                </div>
+
+                <!-- Section 2: Offers Manager (Max 3) -->
+                <div class="pt-6 border-t border-slate-800">
+                    <h4 class="text-sm font-bold text-amber-400 uppercase tracking-wider mb-3">2. Manage Special Offers & Badge Colors (Max 3)</h4>
+                    <div id="adminOffersEditor" class="space-y-4"></div>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-between pt-6 mt-6 border-t border-slate-800 sticky bottom-0 bg-slate-900">
+                <button onclick="resetDefaults()" class="text-xs text-rose-400 hover:underline">Reset All to Default</button>
+                <div class="space-x-2">
+                    <button onclick="closeAdminModal()" class="bg-slate-800 hover:bg-slate-700 px-4 py-2.5 rounded-xl text-xs font-bold">Cancel</button>
+                    <button onclick="saveAdminBackend()" class="bg-emerald-600 hover:bg-emerald-500 text-slate-950 px-6 py-2.5 rounded-xl text-xs font-black">Save & Publish All</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8 pb-8 border-b border-slate-800">
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="images/logo.jpg" alt="Tino Klin" class="logo-img">
+                        <span class="text-2xl font-black text-white">Tino <span class="text-emerald-400">Klin</span></span>
+                    </div>
+                    <p class="text-xs leading-relaxed text-slate-400 max-w-sm">
+                        Tino Klin is a registered Nigerian cleaning company providing premium residential, commercial cleaning, cleaning chemical supplies, and recruitment solutions.
+                    </p>
+                </div>
+
+                <div>
+                    <h5 class="text-sm font-bold text-white mb-3 uppercase tracking-wider">Quick Links</h5>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#services" class="hover:text-emerald-400 transition-colors">Residential Cleaning</a></li>
+                        <li><a href="#offers" class="hover:text-emerald-400 transition-colors">Special Offers</a></li>
+                        <li><a href="#products-store" class="hover:text-emerald-400 transition-colors">Cleaning Store</a></li>
+                        <li><a href="#careers" class="hover:text-emerald-400 transition-colors">Careers &amp; Hiring</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-sm font-bold text-white mb-3 uppercase tracking-wider">Contact Info</h5>
+                    <ul class="space-y-2 text-xs">
+                        <li><i class="fa-solid fa-location-dot text-emerald-400 mr-2"></i> Lagos, Abuja &amp; Ibadan, Nigeria</li>
+                        <li><i class="fa-solid fa-phone text-emerald-400 mr-2"></i> +234 818 008 5401</li>
+                        <li><i class="fa-solid fa-envelope text-emerald-400 mr-2"></i> tinoklin1@gmail.com</li>
+                        <li><button onclick="triggerAdminLogin()" class="text-[10px] font-bold text-slate-400 hover:text-emerald-600 transition-colors bg-slate-100 px-2 py-0.5 rounded ml-2" title="Admin Backend Access">
+        v1.0 2026
+        </button></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+                <p>© 2026 Tino Klin Services Ltd. All rights reserved.</p>
+                <div class="flex space-x-4">
+                    <a id="footerWhatsappBtn" href="https://wa.me/2348180085401?text=Hello%20Tino%20Klin!%20I%20want%20to%20inquire%20about%20your%20cleaning%20services%20and%20products." target="_blank" class="w-8 h-8 rounded-full bg-slate-800 text-emerald-400 hover:bg-emerald-600 hover:text-white flex items-center justify-center transition-colors">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Action Button -->
+    <a id="floatingWhatsappBtn" href="https://wa.me/2348180085401" target="_blank" class="fixed bottom-6 right-6 bg-emerald-600 hover:bg-emerald-700 text-white p-4 rounded-full shadow-2xl z-50 flex items-center justify-center transition-transform hover:scale-110">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- JavaScript Pricing, Offers & Admin Backend Logic -->
+    <script>
+    const defaultProducts = [
+        { id: 1, name: "Tino Klin Pro Floor Disinfectant (4L)", price: 4500, desc: "Kills 99.9% of bacteria and leaves a lasting pine fragrance.", image: "https://images.unsplash.com/photo-1585421514284-efb74c2b69ba?auto=format&fit=crop&q=80&w=400" },
+        { id: 2, name: "Multi-Purpose Heavy Duty Degreaser", price: 3800, desc: "Removes stubborn oil and grease stains from kitchen tiles and stove tops.", image: "https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?auto=format&fit=crop&q=80&w=400" },
+        { id: 3, name: "Microfiber Cleaning Cloths (Pack of 5)", price: 2500, desc: "Ultra-absorbent, lint-free cloths for glass, wood, and car polishing.", image: "https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?auto=format&fit=crop&q=80&w=400" },
+        { id: 4, name: "Toilet Bowl Stain Remover Gel (1L)", price: 2200, desc: "Dissolves tough limescale and rust stains instantly with zero scrubbing.", image: "https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&q=80&w=400" }
+    ];
+
+    const defaultOffers = [
+        {
+            badge: "Save 15%",
+            badgeBg: "bg-emerald-600 text-white",
+            icon: "fa-solid fa-house-chimney-user",
+            title: "Weekend Deep Clean Combo",
+            desc: "Full house deep cleaning + complimentary kitchen degreasing and toilet sanitation. Perfect for busy families.",
+            oldPrice: "₦45,000",
+            newPrice: "₦38,000",
+            priceSub: "/ flat session",
+            buttonBg: "bg-emerald-600 hover:bg-emerald-700",
+            borderStyle: "border-2 border-emerald-500"
+        },
+        {
+            badge: "Best Value",
+            badgeBg: "bg-teal-800 text-white",
+            icon: "fa-solid fa-couch",
+            title: "Sofa & Mattress Deep Refresh",
+            desc: "Deep steam extraction washing for a complete living room sofa set + 2 bedroom mattresses with stain treatment.",
+            oldPrice: "₦30,000",
+            newPrice: "₦24,500",
+            priceSub: "/ package",
+            buttonBg: "bg-teal-800 hover:bg-teal-900",
+            borderStyle: "border border-slate-200"
+        },
+        {
+            badge: "Monthly Deal",
+            badgeBg: "bg-amber-500 text-slate-950",
+            icon: "fa-solid fa-building-shield",
+            title: "Corporate Office Monthly Plan",
+            desc: "4 scheduled visits per month with dedicated uniformed janitors, cleaning supplies included.",
+            oldPrice: "₦120,000",
+            newPrice: "₦95,000",
+            priceSub: "/ month",
+            buttonBg: "bg-slate-900 hover:bg-slate-800",
+            borderStyle: "border border-slate-200"
+        }
+    ];
+
+    function getProducts() {
+        const saved = localStorage.getItem('tinoklin_products');
+        try { return saved ? JSON.parse(saved) : defaultProducts; } catch(e) { return defaultProducts; }
+    }
+
+    function getOffers() {
+        const saved = localStorage.getItem('tinoklin_offers');
+        try { return saved ? JSON.parse(saved) : defaultOffers; } catch(e) { return defaultOffers; }
+    }
+
+    let cart = [];
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        if(document.getElementById('preferredDate')) {
+            document.getElementById('preferredDate').value = tomorrow.toISOString().split('T')[0];
+        }
+        renderEverything();
+    });
+
+    function renderEverything() {
+        renderStoreAndAddons();
+        renderOffers();
+    }
+
+    function renderStoreAndAddons() {
+        const products = getProducts();
+        const container = document.getElementById('productGrid');
+        if(container) {
+            container.innerHTML = '';
+            products.forEach(product => {
+                const card = document.createElement('div');
+                card.className = 'bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all flex flex-col justify-between group';
+                card.innerHTML = `
+                    <div class="relative h-48 overflow-hidden bg-slate-100">
+                        <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 flex flex-col justify-between flex-1">
+                        <div>
+                            <h4 class="text-base font-bold text-slate-900 mb-1">${product.name}</h4>
+                            <p class="text-xs text-slate-600 mb-4 leading-relaxed">${product.desc}</p>
+                            <p class="text-emerald-600 font-black text-lg mb-4">₦${product.price.toLocaleString()}</p>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2 pt-2 border-t border-slate-100">
+                            <button onclick="addToCart(${product.id})" class="bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold py-2.5 rounded-xl text-xs transition-colors flex items-center justify-center space-x-1">
+                                <i class="fa-solid fa-plus text-emerald-600"></i>
+                                <span>Add to Cart</span>
+                            </button>
+                            <button onclick="buyProductDirect('${product.name}', '₦${product.price.toLocaleString()}')" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 rounded-xl text-xs transition-colors flex items-center justify-center space-x-1">
+                                <i class="fa-brands fa-whatsapp"></i>
+                                <span>Buy Now</span>
+                            </button>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        const addonsContainer = document.getElementById('quoteAddonsContainer');
+        if(addonsContainer) {
+            addonsContainer.innerHTML = '';
+            products.forEach(product => {
+                const label = document.createElement('label');
+                label.className = "flex items-center space-x-2.5 text-xs text-slate-700 cursor-pointer font-medium";
+                label.innerHTML = `
+                    <input type="checkbox" name="addonProduct" value="${product.name} - ₦${product.price.toLocaleString()}" class="rounded text-emerald-600 focus:ring-emerald-500 w-4 h-4">
+                    <span>${product.name} — <strong>₦${product.price.toLocaleString()}</strong></span>
+                `;
+                addonsContainer.appendChild(label);
+            });
+        }
+    }
+
+    function renderOffers() {
+        const offers = getOffers();
+        const container = document.getElementById('offersGrid');
+        if(container) {
+            container.innerHTML = '';
+            offers.forEach((offer) => {
+                const card = document.createElement('div');
+                card.className = `${offer.borderStyle || 'border border-slate-200'} bg-white rounded-3xl p-8 relative shadow-lg flex flex-col justify-between`;
+                card.innerHTML = `
+                    <div class="absolute -top-4 right-6 ${offer.badgeBg || 'bg-emerald-600 text-white'} text-xs font-black uppercase px-4 py-1.5 rounded-full shadow">
+                        ${offer.badge}
+                    </div>
+                    <div>
+                        <div class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center text-xl font-bold mb-4">
+                            <i class="${offer.icon}"></i>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-slate-900 mb-2">${offer.title}</h3>
+                        <p class="text-xs text-slate-600 mb-6 leading-relaxed">${offer.desc}</p>
+                        <div class="mb-6">
+                            <span class="text-xs text-slate-400 line-through">${offer.oldPrice}</span>
+                            <div class="text-2xl font-black text-emerald-600">${offer.newPrice} <span class="text-xs font-normal text-slate-500">${offer.priceSub}</span></div>
+                        </div>
+                    </div>
+                    <button onclick="claimOffer('${offer.title}', '${offer.newPrice}')" class="w-full ${offer.buttonBg} text-white font-bold py-3 rounded-xl text-xs transition-colors flex items-center justify-center space-x-2">
+                        <i class="fa-brands fa-whatsapp text-sm"></i>
+                        <span>Claim Offer On WhatsApp</span>
+                    </button>
+                `;
+                container.appendChild(card);
+            });
+        }
+    }
+
+    function triggerAdminLogin() {
+        const passcode = prompt("Enter Admin Passcode to access Backend:");
+        if (passcode === ADMIN_SECRET_CODE) {
+            openAdminModal();
+        } else if (passcode !== null) {
+            alert("Incorrect passcode!");
+        }
+    }
+
+    function openAdminModal() {
+        const products = getProducts();
+        const offers = getOffers();
+
+        const priceEditor = document.getElementById('adminPriceEditor');
+        priceEditor.innerHTML = '';
+        products.forEach((p, idx) => {
+            const div = document.createElement('div');
+            div.className = "bg-slate-800 p-3 rounded-xl border border-slate-700 flex items-center justify-between gap-4";
+            div.innerHTML = `
+                <span class="text-xs font-bold text-slate-300 w-1/2">${p.name}</span>
+                <div class="flex items-center space-x-2 w-1/2">
+                    <span class="text-xs text-slate-400">₦</span>
+                    <input type="number" id="adminPrice_${idx}" value="${p.price}" class="w-full bg-slate-900 border border-slate-700 text-white text-xs font-bold rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                </div>
+            `;
+            priceEditor.appendChild(div);
+        });
+
+        const offersEditor = document.getElementById('adminOffersEditor');
+        offersEditor.innerHTML = '';
+        offers.forEach((o, idx) => {
+            const div = document.createElement('div');
+            div.className = "bg-slate-800 p-4 rounded-xl border border-slate-700 space-y-3";
+            div.innerHTML = `
+                <p class="text-xs font-bold text-amber-400">Offer ${idx + 1}</p>
+                <div class="grid sm:grid-cols-2 gap-2">
+                    <div>
+                        <label class="block text-[10px] text-slate-400 uppercase">Offer Title</label>
+                        <input type="text" id="offerTitle_${idx}" value="${o.title}" class="w-full bg-slate-900 border border-slate-700 text-white text-xs rounded-lg px-3 py-2">
+                    </div>
+                    <div>
+                        <label class="block text-[10px] text-slate-400 uppercase">Badge Text</label>
+                        <input type="text" id="offerBadge_${idx}" value="${o.badge}" class="w-full bg-slate-900 border border-slate-700 text-white text-xs rounded-lg px-3 py-2">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-[10px] text-slate-400 uppercase">Badge Background CSS (e.g. bg-emerald-600 text-white)</label>
+                    <input type="text" id="offerBadgeBg_${idx}" value="${o.badgeBg || 'bg-emerald-600 text-white'}" class="w-full bg-slate-900 border border-slate-700 text-white text-xs rounded-lg px-3 py-2">
+                </div>
+                <div>
+                    <label class="block text-[10px] text-slate-400 uppercase">Description</label>
+                    <textarea id="offerDesc_${idx}" rows="2" class="w-full bg-slate-900 border border-slate-700 text-white text-xs rounded-lg px-3 py-2">${o.desc}</textarea>
+                </div>
+                <div class="grid grid-cols-3 gap-2">
+                    <div>
+                        <label class="block text-[10px] text-slate-400 uppercase">Old Price</label>
+                        <input type="text" id="offerOld_${idx}" value="${o.oldPrice}" class="w-full bg-slate-900 border border-slate-700 text-white text-xs rounded-lg px-3 py-2">
+                    </div>
+                    <div>
+                        <label class="block text-[10px] text-slate-400 uppercase">New Price</label>
+                        <input type="text" id="offerNew_${idx}" value="${o.newPrice}" class="w-full bg-slate-900 border border-slate-700 text-white text-xs rounded-lg px-3 py-2">
+                    </div>
+                    <div>
+                        <label class="block text-[10px] text-slate-400 uppercase">Billing Period</label>
+                        <input type="text" id="offerSub_${idx}" value="${o.priceSub}" class="w-full bg-slate-900 border border-slate-700 text-white text-xs rounded-lg px-3 py-2">
+                    </div>
+                </div>
+            `;
+            offersEditor.appendChild(div);
+        });
+
+        document.getElementById('adminModal').classList.remove('hidden');
+    }
+
+    function closeAdminModal() {
+        document.getElementById('adminModal').classList.add('hidden');
+    }
+
+    function saveAdminBackend() {
+        const products = getProducts();
+        products.forEach((p, idx) => {
+            const input = document.getElementById(`adminPrice_${idx}`);
+            if (input) {
+                const val = parseInt(input.value);
+                if (!isNaN(val)) p.price = val;
+            }
+        });
+        localStorage.setItem('tinoklin_products', JSON.stringify(products));
+
+        const updatedOffers = [];
+        for (let i = 0; i < 3; i++) {
+            const title = document.getElementById(`offerTitle_${i}`).value;
+            const badge = document.getElementById(`offerBadge_${i}`).value;
+            const badgeBg = document.getElementById(`offerBadgeBg_${i}`).value;
+            const desc = document.getElementById(`offerDesc_${i}`).value;
+            const oldPrice = document.getElementById(`offerOld_${i}`).value;
+            const newPrice = document.getElementById(`offerNew_${i}`).value;
+            const priceSub = document.getElementById(`offerSub_${i}`).value;
+
+            updatedOffers.push({
+                badge,
+                badgeBg,
+                icon: defaultOffers[i].icon,
+                title,
+                desc,
+                oldPrice,
+                newPrice,
+                priceSub,
+                buttonBg: defaultOffers[i].buttonBg,
+                borderStyle: defaultOffers[i].borderStyle
+            });
+        }
+        localStorage.setItem('tinoklin_offers', JSON.stringify(updatedOffers));
+
+        closeAdminModal();
+        renderEverything();
+        alert("Backend changes saved and published successfully!");
+    }
+
+    function resetDefaults() {
+        if (confirm("Reset all prices and offers back to default?")) {
+            localStorage.removeItem('tinoklin_products');
+            localStorage.removeItem('tinoklin_offers');
+            closeAdminModal();
+            renderEverything();
+            alert("Reset complete.");
+        }
+    }
+
+    function addToCart(productId) {
+        const products = getProducts();
+        const item = products.find(p => p.id === productId);
+        const existing = cart.find(c => c.id === productId);
+        if (existing) { existing.qty += 1; } else { cart.push({ ...item, qty: 1 }); }
+        updateCartUI();
+        toggleCart(true);
+    }
+
+    function updateCartUI() {
+        const totalCount = cart.reduce((sum, item) => sum + item.qty, 0);
+        if(document.getElementById('cartCount')) document.getElementById('cartCount').innerText = totalCount;
+        if(document.getElementById('cartCountMobile')) document.getElementById('cartCountMobile').innerText = totalCount;
+        if(document.getElementById('cartBadgeCount')) document.getElementById('cartBadgeCount').innerText = totalCount;
+
+        const container = document.getElementById('cartItemsContainer');
+        if(container) {
+            container.innerHTML = '';
+            let totalSum = 0;
+            if (cart.length === 0) {
+                container.innerHTML = `<p class="text-slate-400 text-xs text-center py-8">Your cart is currently empty.</p>`;
+            } else {
+                cart.forEach(item => {
+                    totalSum += item.price * item.qty;
+                    const div = document.createElement('div');
+                    div.className = "flex items-center justify-between bg-slate-50 p-3 rounded-xl border border-slate-200";
+                    div.innerHTML = `
+                        <div class="flex items-center space-x-3">
+                            <img src="${item.image}" class="w-12 h-12 rounded-lg object-cover">
+                            <div>
+                                <h5 class="text-xs font-bold text-slate-900">${item.name}</h5>
+                                <span class="text-xs text-emerald-600 font-bold">₦${item.price.toLocaleString()} x ${item.qty}</span>
+                            </div>
+                        </div>
+                        <button onclick="removeFromCart(${item.id})" class="text-rose-500 hover:text-rose-700 text-sm p-1">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                    `;
+                    container.appendChild(div);
+                });
+            }
+            if(document.getElementById('cartTotal')) document.getElementById('cartTotal').innerText = `₦${totalSum.toLocaleString()}`;
+        }
+    }
+
+    function removeFromCart(id) {
+        cart = cart.filter(c => c.id !== id);
+        updateCartUI();
+    }
+
+    function toggleCart(showExplicit) {
+        const modal = document.getElementById('cartModal');
+        if(modal) {
+            if (showExplicit === true) { modal.classList.remove('hidden'); } 
+            else { modal.classList.toggle('hidden'); }
+        }
+    }
+
+    function buyProductDirect(name, price) {
+        const message = `Hello Tino Klin Store! 🛒\n\nI want to purchase:\n• *${name}* (${price})\n\nPlease let me know delivery details. Thanks!`;
+        window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
+    }
+
+    function checkoutCartWhatsApp() {
+        if (cart.length === 0) { alert('Your cart is empty!'); return; }
+        let orderText = `Hello Tino Klin Store! 🛒✨\n\nI want to place an order for the following cleaning products:\n\n`;
+        let total = 0;
+        cart.forEach((item, index) => {
+            const subtotal = item.price * item.qty;
+            total += subtotal;
+            orderText += `${index + 1}. *${item.name}* (Qty: ${item.qty}) - ₦${subtotal.toLocaleString()}\n`;
+        });
+        orderText += `\n💰 *Total Products Amount:* ₦${total.toLocaleString()}\n\nPlease confirm payment and delivery instructions!`;
+        window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(orderText)}`, '_blank');
+    }
+
+    function claimOffer(offerTitle, offerPrice) {
+        const message = `Hello Tino Klin! 🔥\n\nI want to claim your special promotional offer:\n• *${offerTitle}* at *${offerPrice}*.\n\nPlease share booking details. Thanks!`;
+        window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
+    }
+
+    if(document.getElementById('quoteForm')) {
+        document.getElementById('quoteForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const service = document.getElementById('serviceType').value;
+            const property = document.getElementById('propertySize').value;
+            const city = document.getElementById('serviceCity').value;
+            const date = document.getElementById('preferredDate').value;
+
+            const selectedAddons = [];
+            document.querySelectorAll('input[name="addonProduct"]:checked').forEach(checkbox => {
+                selectedAddons.push(checkbox.value);
+            });
+
+            let productsText = selectedAddons.length > 0 
+                ? selectedAddons.map((item, idx) => `  ${idx + 1}. ${item}`).join('\n')
+                : "  None selected";
+
+            const message = `Hello Tino Klin Cleaning Company! 🧹✨\n\nI would like to request a quote for:\n• *Service Needed:* ${service}\n• *Property Size:* ${property}\n• *Location:* ${city}\n• *Preferred Date:* ${date}\n\n🛒 *Added Cleaning Products:* \n${productsText}\n\nPlease share your price quotation. Thank you!`;
+            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
+        });
+    }
+</script>
+</body>
+</html>
